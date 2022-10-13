@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" standalone="no" ?>
+<!-- <!DOCTYPE indeks SYSTEM "zadanie1.dtd"> -->
+<indeks>
+    <nazwisko>Cichostepski</nazwisko>
+    <numerAlbumu>123123</numerAlbumu>
+    <przedmioty>
+        <nazwa>Techniki internetowe</nazwa>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+    </przedmioty>
+
+    <przedmioty>
+        <nazwa>Techniki internetowe</nazwa>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+    </przedmioty>
+    
+    <przedmioty>
+        <nazwa>Techniki internetowe</nazwa>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+    </przedmioty>
+    <przedmioty>
+        <nazwa>Techniki internetowe</nazwa>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+        <data>2022-10-13</data>
+        <ocena>5</ocena>
+    </przedmioty>
+</indeks>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="indeks" type="indeks-type"></xsd:element>
+    <xsd:element name="nazwisko" type="xsd:string"></xsd:element>
+    <xsd:element name="numerAlbumu" type="xsd:string"></xsd:element>
+    <xsd:element name="przedmioty" type="przedmioty-type"></xsd:element>
+    <xsd:element name="nazwa" type="xsd:string"></xsd:element>
+    <xsd:element name="data" type="xsd:date"></xsd:element>
+    <xsd:element name="ocena" type="xsd:double"></xsd:element>
+
+    <xsd:complexType name="indeks-type">
+        <xsd:sequence>
+            <xsd:element ref="nazwisko" maxOccurs="1"/>
+            <xsd:element ref="numerAlbumu"  maxOccurs="1"/>
+            <xsd:element ref="przedmioty" minOccurs="1" maxOccurs="4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="przedmioty-type">
+        <xsd:sequence>
+            <xsd:element ref="nazwa" maxOccurs="1"/>
+            <xsd:sequence maxOccurs="2" minOccurs="1">
+                <xsd:element ref="data" maxOccurs="1"/>
+                <xsd:element ref="ocena" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

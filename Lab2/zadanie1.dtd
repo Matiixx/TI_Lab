@@ -1,0 +1,7 @@
+<!ELEMENT indeks (nazwisko, numerAlbumu, przedmioty, przedmioty?, przedmioty?, przedmioty?)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT numerAlbumu (#PCDATA)>
+<!ELEMENT przedmioty (nazwa, (data, ocena), (data, ocena)?)>
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT ocena (#PCDATA)>

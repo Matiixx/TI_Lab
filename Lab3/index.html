@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lab3</title>
+
+    <link rel="stylesheet" href="../enlighterjs.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="http://pascal.fis.agh.edu.pl/~0cichostepski">
+        <h2>Strona główna</h2>
+      </a>
+    </header>
+    <main>
+      <div>
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./biblioteka.xml" target="_blank">biblioteka.xml</a>
+          </p>
+          <pre class="codeblock" src="./biblioteka.xml"></pre>
+        </div>
+
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./biblioteka.dtd" target="_blank">biblioteka.dtd</a>
+          </p>
+          <pre class="codeblock" src="./biblioteka.dtd"></pre>
+        </div>
+
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./biblioteka.xsd" target="_blank">biblioteka.xsd</a>
+          </p>
+          <pre class="codeblock" src="./biblioteka.xsd"></pre>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="../enlighterjs.js"></script>
+
+    <script type="text/javascript">
+      const fetchCode = (src) => fetch(src).then((response) => response.text());
+
+      function writeCode(src, elem, language) {
+        fetchCode(src).then((data) => {
+          elem.innerHTML = data;
+          EnlighterJS.enlight(elem, {
+            language: language,
+            theme: "droide",
+            textOverflow: "scroll",
+          });
+        });
+      }
+
+      let elems = document.querySelectorAll(".codeblock");
+
+      elems.forEach((elem) => {
+        let src = elem.getAttribute("src");
+        writeCode(src, elem, "xml");
+      });
+    </script>
+  </body>
+</html>

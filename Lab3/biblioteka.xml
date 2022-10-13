@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteka SYSTEM "biblioteka.dtd">
+<biblioteka>
+
+ <dzial>
+  <nazwa>Horrory</nazwa>
+  <ksiazka>
+    <autor>
+      <imie>Jan</imie>
+      <nazwisko>Kowalski</nazwisko>
+    </autor>
+    <autor>
+      <imie>Jan</imie>
+      <nazwisko>Kowalski</nazwisko>
+    </autor>
+    <tytul>Horrory</tytul>
+    <cena>10.99</cena>
+  </ksiazka>
+ </dzial>
+
+  <dzial>
+    <nazwa>Komedie</nazwa>
+    <ksiazka>
+      <autor>
+        <imie>Jan</imie>
+        <nazwisko>Kowalski</nazwisko>
+      </autor>
+      <tytul>Komedia</tytul>
+      <cena>23.99</cena>
+    </ksiazka>
+  </dzial>
+
+  <dzial>
+    <nazwa>Dramaty</nazwa>
+    <ksiazka>
+      <autor>
+        <imie>Jan</imie>
+        <nazwisko>Inny</nazwisko>
+      </autor>
+      <tytul>Dramat</tytul>
+      <cena>23.99</cena>
+    </ksiazka>
+    <ksiazka>
+      <autor>
+        <imie>Jan</imie>
+        <nazwisko>Inny</nazwisko>
+      </autor>
+      <tytul>Dramat 2</tytul>
+      <cena>26.99</cena>
+    </ksiazka>
+  </dzial>
+
+</biblioteka>

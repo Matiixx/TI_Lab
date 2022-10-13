@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="biblioteka" type="biblioteka-type" />
+  <xsd:element name="dzial" type="dzial-type" />
+  <xsd:element name="nazwa" type="xsd:string" />
+  <xsd:element name="ksiazka" type="ksiazka-type" />
+  <xsd:element name="autor" type="autor-type" />
+  <xsd:element name="imie" type="xsd:string" />
+  <xsd:element name="nazwisko" type="xsd:string" />
+  <xsd:element name="tytul" type="xsd:string" />
+  <xsd:element name="cena">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:double">
+        <xsd:minInclusive value="10"/>
+        <xsd:maxInclusive value="200"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+  <xsd:complexType name="biblioteka-type">
+    <xsd:sequence>
+      <xsd:element ref="dzial" minOccurs="1" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="dzial-type">
+    <xsd:sequence>
+      <xsd:element ref="nazwa" maxOccurs="1" minOccurs="1" />
+      <xsd:element ref="ksiazka" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ksiazka-type">
+    <xsd:sequence>
+      <xsd:element ref="autor" maxOccurs="2" minOccurs="1" />
+      <xsd:element ref="tytul" />
+      <xsd:element ref="cena" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="autor-type">
+    <xsd:sequence>
+      <xsd:element ref="imie" maxOccurs="1" />
+      <xsd:element ref="nazwisko" maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

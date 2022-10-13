@@ -2,9 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
   color: white;
   font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: black;
 }
 
 header {
@@ -23,12 +26,25 @@ a.disable {
   cursor: not-allowed;
 }
 
+a[target="_blank"] {
+  color: hsl(206, 100%, 40%);
+  text-decoration: underline;
+}
+
+.file-p {
+  margin-bottom: 0.5em;
+}
+
 main {
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .list-box {
@@ -44,4 +60,18 @@ main {
 .list-box div {
   margin-top: 1em;
   font-size: 20px;
+}
+
+pre {
+  max-height: 10em;
+}
+
+.code-container {
+  width: 500px;
+}
+
+.enlighter-default {
+  min-height: 5em;
+  max-height: 35em;
+  overflow: scroll;
 }

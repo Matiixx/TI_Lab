@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rysunek>
+	<kwadrat id="1">
+		<kolor value="red" />
+	</kwadrat>
+	<kwadrat id="32">
+		<kolor value="red" />
+	</kwadrat>
+	<grupa id="2">
+		<kolo id="4">
+			<kolor value="green" />
+		</kolo>
+		<kwadrat id="5">
+			<kolor>
+				<red>
+					5
+				</red>
+				<green>
+					100
+				</green>
+				<blue>
+					50
+				</blue>
+			</kolor>
+		</kwadrat>
+		<grupa id="5" />
+	</grupa>
+	<grupa id="5" />
+</rysunek>

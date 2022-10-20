@@ -6,6 +6,13 @@
 
     <link rel="stylesheet" href="../enlighterjs.css" />
     <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -14,26 +21,39 @@
       </a>
     </header>
     <main>
-      <div>
+      <div class="content">
+        <div style="margin-bottom: 100px; margin-top: 50px">
+          <a href="./biblioteka.xml" target="_blank">
+            <h2>zad_xml_css <i class="fa-solid fa-up-right-from-square"></i></h2
+          ></a>
+        </div>
+
         <div class="code-container">
           <p class="file-p">
             <a href="./biblioteka.xml" target="_blank">biblioteka.xml</a>
           </p>
-          <pre class="codeblock" src="./biblioteka.xml"></pre>
+          <pre class="codeblock" src="./biblioteka.xml" code="xml"></pre>
+        </div>
+
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./style.css" target="_blank">style.css</a>
+          </p>
+          <pre class="codeblock" src="./style.css" code="css"></pre>
         </div>
 
         <div class="code-container">
           <p class="file-p">
             <a href="./biblioteka.dtd" target="_blank">biblioteka.dtd</a>
           </p>
-          <pre class="codeblock" src="./biblioteka.dtd"></pre>
+          <pre class="codeblock" src="./biblioteka.dtd" code="xml"></pre>
         </div>
 
         <div class="code-container">
           <p class="file-p">
             <a href="./biblioteka.xsd" target="_blank">biblioteka.xsd</a>
           </p>
-          <pre class="codeblock" src="./biblioteka.xsd"></pre>
+          <pre class="codeblock" src="./biblioteka.xsd" code="xml"></pre>
         </div>
       </div>
     </main>
@@ -48,7 +68,7 @@
           elem.innerHTML = data;
           EnlighterJS.enlight(elem, {
             language: language,
-            theme: "droide",
+            theme: "atomic",
             textOverflow: "scroll",
           });
         });
@@ -58,7 +78,8 @@
 
       elems.forEach((elem) => {
         let src = elem.getAttribute("src");
-        writeCode(src, elem, "xml");
+        let type = elem.getAttribute("code");
+        writeCode(src, elem, type);
       });
     </script>
   </body>

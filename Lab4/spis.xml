@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="spis.css"?>
+<?xml-stylesheet type="text/xsl" href="spis_4.xsl"?>
+<dane>
+	<miasto>
+		<nazwa>
+			Krakow
+		</nazwa>
+		<osoba pesel="78092002511">
+			<status>
+				uczen
+			</status>
+			<imie>
+				Karol
+			</imie>
+			<imie>
+				Pawel
+			</imie>
+			<nazwisko>
+				Jonacki
+			</nazwisko>
+		</osoba>
+		<osoba pesel="88092002511">
+			<status>
+				emeryt
+			</status>
+			<imie>
+				Anna
+			</imie>
+			<imie>
+				Maria
+			</imie>
+			<nazwisko>
+				Potoczna
+			</nazwisko>
+		</osoba>
+		<osoba pesel="99092002511">
+			<status>
+				emeryt
+			</status>
+			<imie>
+				Maria
+			</imie>
+			<imie>
+				Anna
+			</imie>
+			<nazwisko>
+				Rzadka
+			</nazwisko>
+		</osoba>
+	</miasto>
+	<miasto>
+		<nazwa>
+			Opole
+		</nazwa>
+		<osoba pesel="83092002511">
+			<status>
+				emeryt
+			</status>
+			<imie>
+				Jan
+			</imie>
+			<imie>
+				Karol
+			</imie>
+			<nazwisko>
+				Potoczny
+			</nazwisko>
+		</osoba>
+		<osoba pesel="84092002511">
+			<status>
+				uczen
+			</status>
+			<imie>
+				Janusz
+			</imie>
+			<imie>
+				Wladyslaw
+			</imie>
+			<nazwisko>
+				Czesty
+			</nazwisko>
+		</osoba>
+	</miasto>
+</dane>

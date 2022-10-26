@@ -1,0 +1,40 @@
+* {
+  font-family: sans-serif;
+}
+.main-header {
+  background-color: #ff6347;
+  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
+}
+
+.section {
+  width: 100%;
+  color: blue;
+  border-color: black;
+}
+
+.section tr td {
+  border-color: black;
+  padding: 3px;
+}
+
+.section:nth-child(odd) {
+  color: green;
+  border-color: black;
+}
+
+.section-name {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #ffefd5;
+}
+
+.col-names {
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+}
+.col-names td {
+  padding: 5px;
+}

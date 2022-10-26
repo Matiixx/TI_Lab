@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<?xml-stylesheet type="text/xsl" href="biblioteka.xsl"?>
+<!DOCTYPE biblioteka SYSTEM "biblioteka.dtd">
+<biblioteka>
+	<dzial>
+		<nazwa>
+			Horrory
+		</nazwa>
+		<ksiazka>
+			<tytul>
+				Wintergirls
+			</tytul>
+			<autor>
+				<imie>
+					Jan
+				</imie>
+				<nazwisko>
+					Kowalski
+				</nazwisko>
+			</autor>
+			<autor>
+				<imie>
+					Jan
+				</imie>
+				<nazwisko>
+					Kowalski
+				</nazwisko>
+			</autor>
+			<cena>
+				10.99
+			</cena>
+		</ksiazka>
+		<ksiazka>
+			<tytul>
+				The Princess Diarist
+			</tytul>
+			<autor>
+				<imie>
+					André
+				</imie>
+				<nazwisko>
+					Breton
+				</nazwisko>
+			</autor>
+			<cena>
+				10.99
+			</cena>
+		</ksiazka>
+		<ksiazka>
+			<tytul>
+				Waiting for the Dark
+			</tytul>
+			<autor>
+				<imie>
+					Theodor
+				</imie>
+				<nazwisko>
+					Fontane
+				</nazwisko>
+			</autor>
+			<cena>
+				10.99
+			</cena>
+		</ksiazka>
+	</dzial>
+	<dzial>
+		<nazwa>
+			Komedie
+		</nazwa>
+		<ksiazka>
+			<tytul>
+				The Queen of the Tearling
+			</tytul>
+			<autor>
+				<imie>
+					Ivan
+				</imie>
+				<nazwisko>
+					Klíma
+				</nazwisko>
+			</autor>
+			<cena>
+				23.99
+			</cena>
+		</ksiazka>
+	</dzial>
+	<dzial>
+		<nazwa>
+			Dramaty
+		</nazwa>
+		<ksiazka>
+			<tytul>
+				All About H. Hatterr
+			</tytul>
+			<autor>
+				<imie>
+					Christa
+				</imie>
+				<nazwisko>
+					Wolf
+				</nazwisko>
+			</autor>
+			<cena>
+				23.99
+			</cena>
+		</ksiazka>
+		<ksiazka>
+			<tytul>
+				The Maze Runner
+			</tytul>
+			<autor>
+				<imie>
+					James
+				</imie>
+				<nazwisko>
+					Dashner
+				</nazwisko>
+			</autor>
+			<cena>
+				26.99
+			</cena>
+		</ksiazka>
+	</dzial>
+</biblioteka>

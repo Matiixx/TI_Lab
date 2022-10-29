@@ -11,24 +11,25 @@
     />
   </head>
   <body>
+    <div id="particles-js"></div>
     <header>
       <h2>Techniki internetowe</h2>
       <h1>Mateusz Cichostępski</h1>
     </header>
-    <main>
+    <main id="main-site">
       <div class="list-box">
         <h3>Pascal</h3>
-        <div>
+        <div labnumber="1">
           <a href="./Lab1/">Lab01 - 06.10.2022</a>
         </div>
-        <div>
+        <div labnumber="2">
           <a href="./Lab2/">Lab02 - 13.10.2022</a>
         </div>
-        <div>
+        <div labnumber="3">
           <a href="./Lab3/">Lab03 - 20.10.2022</a>
         </div>
-        <div>
-          <a class="disable">Lab04 - 27.10.2022</a>
+        <div labnumber="4">
+          <a href="./Lab4">Lab04 - 27.10.2022</a>
         </div>
         <div>
           <a class="disable">Lab05 - 03.11.2022</a>
@@ -58,7 +59,7 @@
           <a class="disable">Lab13 - 29.12.2022</a>
         </div>
       </div>
-      <div class="list-box">
+      <!-- <div class="list-box">
         <h3>Chmura obliczeniowa</h3>
         <div>
           <a class="disable">Lab01 - 06.10.2022</a>
@@ -99,7 +100,15 @@
         <div>
           <a class="disable">Lab13 - 29.12.2022</a>
         </div>
-      </div>
+      </div> -->
     </main>
+    <div id="counter-background"><h1></h1></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
   </body>
 </html>

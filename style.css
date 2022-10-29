@@ -6,23 +6,65 @@
   font-family: "Arial", sans-serif;
 }
 
+#particles-js {
+  height: calc(100vh - 5px);
+  width: calc(100vw - 5px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+}
+
+#counter-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100vw - 5px);
+  height: calc(100vh - 5px);
+  z-index: 0;
+}
+
+#counter-background h1 {
+  opacity: 0;
+  font-size: clamp(100px, 50vh, 80vh);
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  animation: reverse-slide-anim 0.5s ease;
+  animation-fill-mode: forwards;
+  letter-spacing: -0.1em;
+}
+
+#counter-background h1.hover {
+  animation: slide-anim 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
 body {
   background-color: black;
 }
 
 header {
+  position: relative;
+  z-index: 2;
   width: 100%;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 1em;
+  font-size: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
 }
 
 a {
   color: white;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 a.disable {
-  color: gray;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -31,12 +73,40 @@ a[target="_blank"] {
   text-decoration: underline;
 }
 
+.list-box:hover > div > a {
+  opacity: 0.7;
+}
+
+.list-box:hover > div > a.disable {
+  opacity: 0.2;
+}
+
+.list-box:hover > div:hover > a {
+  opacity: 1;
+}
+
+.list-box:hover > div:hover > a.disable {
+  opacity: 0.2;
+}
+
 .file-p {
   margin-bottom: 0.5em;
 }
 
-main {
+main#main-site {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translate(-50%, 0);
+  z-index: 2;
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -53,25 +123,55 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 300px;
+  /* width: 300px; */
   margin-bottom: 20px;
+  gap: 15px;
 }
 
 .list-box div {
-  margin-top: 1em;
-  font-size: 20px;
+  font-size: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
 }
 
 pre {
   max-height: 10em;
 }
 
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .code-container {
-  width: 500px;
+  width: 75%;
+  margin: auto;
 }
 
 .enlighter-default {
   min-height: 5em;
   max-height: 35em;
   overflow: scroll;
+}
+
+@keyframes slide-anim {
+  from {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 0.1;
+  }
+}
+
+@keyframes reverse-slide-anim {
+  from {
+    margin-top: 0;
+    opacity: 0.1;
+  }
+  to {
+    margin-top: 100px;
+    opacity: 0;
+  }
 }

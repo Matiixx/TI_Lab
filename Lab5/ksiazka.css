@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+table {
+  border: 2px solid #2727ff;
+  border-spacing: 0px;
+  border-collapse: separate;
+  margin: 30px;
+}
+
+th,
+td {
+  padding: 4px 15px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f0f8ff;
+}
+
+tr:nth-child(even) {
+  background-color: #fff4ff;
+}
+
+thead tr {
+  background-color: #fcf9bc !important;
+}

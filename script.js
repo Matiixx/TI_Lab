@@ -1,3 +1,15 @@
+const wait = (delay = 0) =>
+  new Promise((resolve) => setTimeout(resolve, delay));
+
+document.addEventListener("DOMContentLoaded", () =>
+  wait(250).then(() => {
+    $("#loading-screen").removeClass("off-animate");
+    wait(750).then(() => {
+      $("#loading-screen").hide();
+    });
+  })
+);
+
 particlesJS("particles-js", {
   particles: {
     number: {

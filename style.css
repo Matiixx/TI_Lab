@@ -44,6 +44,26 @@
   animation-fill-mode: forwards;
 }
 
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 5px);
+  height: calc(100vh - 5px);
+  background: black;
+  z-index: 999;
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6e0b072897469.5bf6e79950d23.gif");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  animation: hide-loading-screen 0.75s ease;
+  animation-fill-mode: forwards;
+}
+
+#loading-screen.off-animate {
+  animation-name: none;
+}
+
 body {
   background-color: black;
 }
@@ -173,5 +193,12 @@ pre {
   to {
     margin-top: 100px;
     opacity: 0;
+  }
+}
+
+@keyframes hide-loading-screen {
+  to {
+    opacity: 0;
+    /* z-index: -1; */
   }
 }

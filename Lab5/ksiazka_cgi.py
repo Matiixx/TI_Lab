@@ -9,7 +9,7 @@ autor = form.getvalue("autor")
 tytul = form.getvalue("tytul")
 
 if tytul and autor:
-  date = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+  date = datetime.today().strftime('%Y/%m/%d %H:%M:%S')
   with open("../Lab5/db/ksiazka.dat", 'a') as file:
     file.write(tytul + ";" + autor + ";" + date + ";" + os.environ["REMOTE_ADDR"] + ";\n")
 
@@ -20,6 +20,7 @@ print ("<!DOCTYPE html>")
 print ("<html><head>")
 print ("<title>Rekordy</title>")
 print ("<link href=\"../Lab5/style.css\" rel=\"stylesheet\" type=\"text/css\" />")
+print ("<meta charset=\"utf-8\" />")
 print ("</head><body><div class=\"result\">")
 
 print ("<h3>REKORDY W BAZIE DANYCH</h3>")

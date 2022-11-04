@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Ksiazka</title>
+  </head>
+  <body>
+    <main>
+      <form action="../cgi-bin/ksiazka_cgi.py" method="get">
+        <legend>Książki</legend>
+        <div class="input-wrapper">
+          <span>Tytuł</span><input type="text" name="tytul" /> <span>Autor</span
+          ><input type="text" name="autor" />
+        </div>
+        <input type="submit" value="Wyslij" class="submit-btn" />
+      </form>
+    </main>
+  </body>
+</html>

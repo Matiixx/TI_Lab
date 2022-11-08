@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prep</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <form id="main-form">
+      <div>
+        <span>Imie: (pole wymagane)</span>
+        <span class="error" id="imie-err"></span>
+      </div>
+      <input type="text" name="imie" data-required="true" data-minlen="4" />
+      <div>
+        <span>Nazwisko: (pole wymagane)</span>
+        <span class="error" id="nazwisko-err"></span>
+      </div>
+      <input type="text" name="nazwisko" data-required="true" data-minlen="4" />
+
+      <div>
+        <span>Adres email: (pole wymagane)</span>
+        <span class="error" id="email-err"></span>
+      </div>
+      <input type="email" name="email" data-required="true" />
+
+      <div>
+        <span>Rok studiów: (pole wymagane)</span>
+        <span class="error" id="rok-err"></span>
+      </div>
+      <select name="rok" data-required="true">
+        <option value="" disabled selected>Wybierz rok</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+
+      <div>
+        <span>Uwagi: (pole nie wymagane)</span>
+      </div>
+      <textarea type="text" name="uwagi" data-required="false"></textarea>
+      <div>
+        <input type="submit" value="Wyślij" />
+      </div>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

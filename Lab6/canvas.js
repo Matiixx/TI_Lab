@@ -19,7 +19,7 @@
 
   const drawAxis = (context) => {
     context.beginPath();
-    context.strokeStyle = "#a12";
+    context.strokeStyle = "#4339c7";
     context.lineWidth = 2;
 
     //X
@@ -41,22 +41,33 @@
     context.stroke();
   };
 
-  const drawFunction = (context, a, b) => {
-    const y = (x) => {
-      return a * x + b;
-    };
+  const drawFunction = (context) => {
+
     context.beginPath();
-    context.strokeStyle = "#000";
-    for (let x = 0; x < canvas.width; x += 0.1) {
-      context.fillRect(x, canvas.height - y(x), 1, 1);
-    }
+    context.strokeStyle = "#4339c7";
+    context.lineWidth = 2;
+
+    context.moveTo(0.03 * canvas.width, 0.8 * canvas.height)
+    context.lineTo(0.6 * canvas.width, 0.1 * canvas.height)
+
     context.stroke();
   };
+
+  const drawText = (context) => {
+    context.font = "bold 20px sans-serif";
+    context.fillText("y", 0.05 * canvas.width - 20, 0.5 * canvas.height);
+    context.fillText("x", 0.5 * canvas.width, 0.96 * canvas.height + 20)
+
+    context.font = "bold 40px sans-serif";
+    context.fillText("y = ax + b", 0.4 * canvas.width, 0.5 * canvas.height)
+
+  }
 
   const draw = (context) => {
     drawLines(context);
     drawAxis(context);
-    drawFunction(context, 0.5, 0);
+    drawFunction(context);
+    drawText(context);
   };
 
   const resize = () => {

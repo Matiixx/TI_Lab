@@ -1,50 +1,100 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Prep</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <title>Lab6</title>
+
+    <link rel="stylesheet" href="../enlighterjs.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <form id="main-form">
-      <div>
-        <span>Imie: (pole wymagane)</span>
-        <span class="error" id="imie-err"></span>
-      </div>
-      <input type="text" name="imie" data-required="true" data-minlen="4" />
-      <div>
-        <span>Nazwisko: (pole wymagane)</span>
-        <span class="error" id="nazwisko-err"></span>
-      </div>
-      <input type="text" name="nazwisko" data-required="true" data-minlen="4" />
+    <header>
+      <a href="http://pascal.fis.agh.edu.pl/~0cichostepski">
+        <h2>Strona główna</h2>
+      </a>
+    </header>
+    <main>
+      <div class="content">
+        <!-- <div style="margin-bottom: 100px; margin-top: 50px">
+          <a href="./formularz_ksiazka.html" target="_blank">
+            <h2>zad_cgi <i class="fa-solid fa-up-right-from-square"></i></h2
+          ></a>
+        </div> -->
 
-      <div>
-        <span>Adres email: (pole wymagane)</span>
-        <span class="error" id="email-err"></span>
-      </div>
-      <input type="email" name="email" data-required="true" />
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./formularz.html" target="_blank">formularz.html</a>
+          </p>
+          <pre class="codeblock" src="./formularz.html" code="html"></pre>
+        </div>
 
-      <div>
-        <span>Rok studiów: (pole wymagane)</span>
-        <span class="error" id="rok-err"></span>
-      </div>
-      <select name="rok" data-required="true">
-        <option value="" disabled selected>Wybierz rok</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./formularz2.html" target="_blank">formularz2.html</a>
+          </p>
+          <pre class="codeblock" src="./formularz2.html" code="html"></pre>
+        </div>
 
-      <div>
-        <span>Uwagi: (pole nie wymagane)</span>
-      </div>
-      <textarea type="text" name="uwagi" data-required="false"></textarea>
-      <div>
-        <input type="submit" value="Wyślij" />
-      </div>
-    </form>
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./zad1.js" target="_blank">zad1.js</a>
+          </p>
+          <pre class="codeblock" src="./zad1.js" code="js"></pre>
+        </div>
 
-    <script src="./script.js"></script>
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./zad2.js" target="_blank">zad2.js</a>
+          </p>
+          <pre class="codeblock" src="./zad2.js" code="js"></pre>
+        </div>
+
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./funkcja.html" target="_blank">funkcja.html</a>
+          </p>
+          <pre class="codeblock" src="./funkcja.html" code="html"></pre>
+        </div>
+
+        <div class="code-container">
+          <p class="file-p">
+            <a href="./canvas.js" target="_blank">canvas.js</a>
+          </p>
+          <pre class="codeblock" src="./canvas.js" code="js"></pre>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="../enlighterjs.js"></script>
+
+    <script type="text/javascript">
+      const fetchCode = (src) => fetch(src).then((response) => response.text());
+
+      function writeCode(src, elem, language) {
+        fetchCode(src).then((data) => {
+          elem.innerHTML = data;
+          EnlighterJS.enlight(elem, {
+            language: language,
+            theme: "atomic",
+            textOverflow: "scroll",
+          });
+        });
+      }
+
+      let elems = document.querySelectorAll(".codeblock");
+
+      elems.forEach((elem) => {
+        let src = elem.getAttribute("src");
+        let type = elem.getAttribute("code");
+        writeCode(src, elem, type);
+      });
+    </script>
   </body>
 </html>

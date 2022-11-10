@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formularz</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 25%;
+        padding: 1rem;
+      }
+      form > div {
+        display: flex;
+        flex-direction: column;
+      }
+      form > div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      form :is(input, textarea, select) {
+        width: 100%;
+      }
+      form .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="form1">
+      <div>
+        <div>
+          <span>Imie</span>
+          <span id="imie-error" class="error"></span>
+        </div>
+        <input name="imie" type="text" data-required="true" data-minLen="4" />
+      </div>
+      <div>
+        <div>
+          <span>Nazwisko</span>
+          <span id="nazwisko-error" class="error"></span>
+        </div>
+        <input
+          name="nazwisko"
+          type="text"
+          data-required="true"
+          data-minLen="4"
+        />
+      </div>
+      <div>
+        <div>
+          <span>Email</span>
+          <span id="email-error" class="error"></span>
+        </div>
+        <input name="email" type="email" data-required="true" />
+      </div>
+      <div>
+        <div>
+          <span>Rok studiow</span>
+          <span id="rok-error" class="error"></span>
+        </div>
+        <select name="rok" data-required="true">
+          <option value="" disabled selected>Wybierz grupe</option>
+          <option value="1">Rok 1</option>
+          <option value="2">Rok 2</option>
+          <option value="3">Rok 3</option>
+        </select>
+      </div>
+      <div>
+        <span>Uwagi</span>
+        <textarea name="uwagi" data-required="false"></textarea>
+      </div>
+      <input type="submit" value="Wyslij" name="submit_button" />
+    </form>
+
+    <script src="zad1.js"></script>
+  </body>
+</html>

@@ -139,13 +139,14 @@ const canvasAnimation = [ParticlesThree, ParticlesP5];
 
 canvasAnimation.random()();
 
-const handleMouseStay = () => {
-  $('.list-box').addClass("disable")
-}
-
 var timeoutid = 0;
 $(window).mousemove(() => {
+  $(".list-box").removeClass("transparent");
+  $("header").removeClass("transparent");
   clearTimeout(timeoutid);
-  $('.list-box').removeClass("disable")
-  timeoutid = setTimeout(handleMouseStay, 1000);
+
+  timeoutid = setTimeout(() => {
+    $(".list-box").addClass("transparent");
+    $("header").addClass("transparent");
+  }, 3000);
 });

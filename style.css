@@ -75,6 +75,12 @@ header {
   text-align: center;
   padding-top: 1em;
   font-size: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
+  will-change: opacity;
+  transition: opacity 0.5s ease-in-out;
+}
+
+header.transparent {
+  opacity: 0;
 }
 
 a {
@@ -146,14 +152,15 @@ main {
   /* width: 300px; */
   margin-bottom: 20px;
   gap: 15px;
+  will-change: opacity;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .list-box div {
   font-size: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
 }
 
-.list-box.disable,
-.list-box.disable * {
+.list-box.transparent {
   opacity: 0;
 }
 

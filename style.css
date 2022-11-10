@@ -15,7 +15,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  z-index: 1;
+  z-index: -1;
 }
 
 #counter-background {
@@ -150,6 +150,11 @@ main {
 
 .list-box div {
   font-size: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
+}
+
+.list-box.disable,
+.list-box.disable * {
+  opacity: 0;
 }
 
 pre {

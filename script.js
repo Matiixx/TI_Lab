@@ -135,7 +135,7 @@ Array.prototype.random = function () {
   return this[Math.floor(Math.random() * this.length)];
 };
 
-const canvasAnimation = [ParticlesThree, ParticlesP5];
+const canvasAnimation = [ParticlesThree, ParticlesP5, Stars];
 
 canvasAnimation.random()();
 

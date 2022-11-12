@@ -6,7 +6,7 @@
   font-family: "Arial", sans-serif;
 }
 
-#particles-js {
+#canvas-wrapper {
   height: calc(100vh - 5px);
   width: calc(100vw - 5px);
   position: absolute;

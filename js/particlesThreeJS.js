@@ -19,7 +19,7 @@ function ParticlesThree() {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById("particles-js").appendChild(renderer.domElement);
+    document.getElementById("canvas-wrapper").appendChild(renderer.domElement);
 
     sprite = new THREE.TextureLoader().load(
       "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/sprites/disc.png"

@@ -6,7 +6,7 @@ function ParticlesP5() {
     const MAX_LEN = 100;
 
     p.setup = () => {
-      const divWrapper = document.querySelector("#particles-js");
+      const divWrapper = document.querySelector("#canvas-wrapper");
       canvas = p.createCanvas(p.windowWidth, p.windowHeight);
       canvas.position(0, 0);
       canvas.parent(divWrapper);

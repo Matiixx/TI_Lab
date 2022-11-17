@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lab7</title>
+
+  <link rel="stylesheet" href="../enlighterjs.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <a href="http://pascal.fis.agh.edu.pl/~0cichostepski">
+      <h2>Strona główna</h2>
+    </a>
+  </header>
+  <main>
+    <div class="content">
+      <!-- <div style="margin-bottom: 100px; margin-top: 50px">
+          <a href="./formularz_ksiazka.html" target="_blank">
+            <h2>zad_cgi <i class="fa-solid fa-up-right-from-square"></i></h2
+          ></a>
+        </div> -->
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./quiz.html" target="_blank">quiz.html</a>
+        </p>
+        <pre class="codeblock" src="./quiz.html" code="html"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./quiz.js" target="_blank">quiz.js</a>
+        </p>
+        <pre class="codeblock" src="./quiz.js" code="js"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./quiz.json" target="_blank">quiz.json</a>
+        </p>
+        <pre class="codeblock" src="./quiz.json" code="json"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./quiz.py" target="_blank">quiz.py</a>
+        </p>
+        <pre class="codeblock" src="./quiz.py" code="py"></pre>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="text/javascript" src="../enlighterjs.js"></script>
+
+  <script type="text/javascript">
+    const fetchCode = (src) => fetch(src).then((response) => response.text());
+
+    function writeCode(src, elem, language) {
+      fetchCode(src).then((data) => {
+        elem.innerHTML = data;
+        EnlighterJS.enlight(elem, {
+          language: language,
+          theme: "atomic",
+          textOverflow: "scroll",
+        });
+      });
+    }
+
+    let elems = document.querySelectorAll(".codeblock");
+
+    elems.forEach((elem) => {
+      let src = elem.getAttribute("src");
+      let type = elem.getAttribute("code");
+      writeCode(src, elem, type);
+    });
+  </script>
+</body>
+
+</html>

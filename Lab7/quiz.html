@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QUIZ</title>
+
+    <script src="./quiz.js" defer></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            padding: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid black;
+            min-height: 250px;
+            justify-content: space-around;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div>
+            <span>Quiz: Ktora pore roku lubisz?</span>
+            <form>
+                <div>
+                    <input type="radio" name="pora_roku" value="wiosna"> <label for="wiosna">Wiosna</label>
+                </div>
+                <div>
+                    <input type="radio" name="pora_roku" value="lato"> <label for="lato">Lato</label>
+                </div>
+                <div>
+                    <input type="radio" name="pora_roku" value="jesien"> <label for="jesien">Jesien</label>
+                </div>
+                <div>
+                    <input type="radio" name="pora_roku" value="zima"> <label for="zima">Zima</label>
+                </div>
+                <button id="sendAnsBtn">Wyslij</button>
+            </form>
+        </div>
+        <div>
+            <canvas id="canvas">
+            </canvas>
+        </div>
+    </main>
+
+</body>
+
+</html>

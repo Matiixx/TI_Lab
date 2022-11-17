@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ksiazki</title>
+  <script src="./ajax_zadanie.js" defer></script>
+  <link rel="stylesheet" href="ajax_style.css" type="text/css">
+</head>
+
+<body>
+  <main>
+    <div class="buttons">
+      <span>Ksiazki</span>
+      <div>
+        <button id="addRecordBtn">Dodaj rekord</button>
+        <button id="showRecordsBtn">Lista rekordow</button>
+      </div>
+    </div>
+
+    <div id="resDiv">
+
+      <div class="form disable">
+        <form name="form1">
+          <div>
+            <span>Tytul</span>
+            <input type="text" name="tytul">
+          </div>
+          <div>
+            <span>Autor</span>
+            <input type="text" name="autor">
+          </div>
+        </form>
+        <button id="sendRecord">Wyslij</button>
+        <p id="result-text"></p>
+      </div>
+
+      <div class="list disable">
+        <h3>rekordy dostepne w bazie</h3>
+        <table id="res-table"></table>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>

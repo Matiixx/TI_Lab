@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+  <script src="./canvas.js" defer></script>
+
+  <style>
+    .main {
+      display: flex;
+      gap: 1rem;
+    }
+
+    #canvas-wrapper {
+      border: 2px solid black;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #svg-wrapper {
+      border: 2px solid black;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #svg {
+      width: 600px;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form">
+    <div>
+      <span>Podaj wspolrzedne srodka</span>
+      <input type="number" name="x" id="input-x">
+      <input type="number" name="y" id="input-y">
+    </div>
+    <div>
+      <span>Podaj promien</span>
+      <input type="number" name="r" id="input-r">
+    </div>
+    <div>
+      <button id="btn">Wykonaj</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="canvas-wrapper">
+      <canvas id="root" height="500" width="600"></canvas>
+      <span>Rysunek canvas</span>
+    </div>
+    <div id="svg-wrapper">
+      <svg width="600" height="500" id="svg">
+
+      </svg>
+      <span>Rysunek SVG</span>
+    </div>
+  </div>
+</body>
+
+</html>

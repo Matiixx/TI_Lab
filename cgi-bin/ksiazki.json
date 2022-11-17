@@ -1,0 +1,16 @@
+{
+  "ksiazki": [
+    {
+      "tytul": "Lalka",
+      "autor": "Prus"
+    },
+    {
+      "autor": "Prus",
+      "tytul": "Lalka"
+    },
+    {
+      "autor": "Autor",
+      "tytul": "Tytul"
+    }
+  ]
+}

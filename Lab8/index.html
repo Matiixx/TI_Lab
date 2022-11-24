@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lab8</title>
+
+  <link rel="stylesheet" href="../enlighterjs.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <a href="http://pascal.fis.agh.edu.pl/~0cichostepski">
+      <h2>Strona główna</h2>
+    </a>
+  </header>
+  <main>
+    <div class="content">
+      <div style="margin-bottom: 100px; margin-top: 50px">
+        <a href="./strona_glowna.php" target="_blank">
+          <h2>Zadanie PHP <i class="fa-solid fa-up-right-from-square"></i></h2>
+        </a>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./strona_glowna.php" target="_blank">strona_glowna.php</a>
+        </p>
+        <pre class="codeblock" src="./strona_glowna.txt" code="php"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./NoteInterface.php" target="_blank">NoteInterface.php</a>
+        </p>
+        <pre class="codeblock" src="./NoteInterface.txt" code="php"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./nowywpis.html" target="_blank">nowywpis.html</a>
+        </p>
+        <pre class="codeblock" src="./nowywpis.html" code="html"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./nowywpis.html" target="_blank">nowywpis.html</a>
+        </p>
+        <pre class="codeblock" src="./nowywpis.html" code="html"></pre>
+      </div>
+
+      <div class="code-container">
+        <p class="file-p">
+          <a href="./nowywpis.php" target="_blank">nowywpis.php</a>
+        </p>
+        <pre class="codeblock" src="./nowywpis.txt" code="php"></pre>
+      </div>
+
+
+    </div>
+  </main>
+
+  <script type="text/javascript" src="../enlighterjs.js"></script>
+
+  <script type="text/javascript">
+    const fetchCode = (src) => fetch(src).then((response) => response.text());
+
+    function writeCode(src, elem, language) {
+      fetchCode(src).then((data) => {
+        elem.innerHTML = data;
+        EnlighterJS.enlight(elem, {
+          language: language,
+          theme: "atomic",
+          textOverflow: "scroll",
+        });
+      });
+    }
+
+    let elems = document.querySelectorAll(".codeblock");
+
+    elems.forEach((elem) => {
+      let src = elem.getAttribute("src");
+      let type = elem.getAttribute("code");
+      writeCode(src, elem, type);
+    });
+  </script>
+</body>
+
+</html>

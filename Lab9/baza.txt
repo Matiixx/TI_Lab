@@ -1,0 +1,28 @@
+function searchUserForm()
+  {
+
+    $this->layout->header = 'Szukanie uzytkownika';
+    $this->view = new view('searchform');
+    $this->layout->content = $this->view;
+    return $this->layout;
+
+  }
+
+  function find()
+  {
+    $data = $_POST['data'];
+    $obj = json_decode($data);
+    if (isset($obj->lname)) {
+      $response = $this->model->searchUser($obj);
+      if ($response) {
+        $ret = '<table border="1">';
+        foreach ($response as $row) {
+          $ret .= '<tr><td>' . $row['imie'] . '</td><td>' . $row['nazwisko'] . '</td><td>' . $row['miejscowosc'] . '</td></tr>';
+        }
+        $ret .= '</table>';
+        return $ret;
+      } else {
+        return 'Nie znaleziono zadnego rekordu';
+      }
+    }
+  }

@@ -1,0 +1,8 @@
+  public function searchUser($obj)
+  {
+    $this->sth = self::$db->prepare('SELECT * FROM osoba WHERE nazwisko LIKE :lname ');
+    $this->sth->bindValue(':lname', "%" . $obj->lname . "%", PDO::PARAM_STR);
+    $this->sth->execute();
+    $result = $this->sth->fetchAll();
+    return $result;
+  }

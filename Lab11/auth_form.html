@@ -10,13 +10,19 @@
 
 <body>
 
-    <form>
+    <form id="login-form">
         <span>Username</span><input type="text" name="user" />
         <br>
         <span>Password</span><input type="text" name="password" />
         <br>
         <input type="submit" value="Zaloguj">
     </form>
+
+    <div>
+        <h3>Get books</h3>
+        <button id="load-btn">Load books</button>
+        <div id="load-res"></div>
+    </div>
 
     <script src="auth_form.js"></script>
 </body>

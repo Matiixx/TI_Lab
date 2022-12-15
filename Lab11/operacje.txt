@@ -1,0 +1,32 @@
+//Logowanie
+curl -i -d '{
+    "username": "john",
+    "password": "password123admin"
+}' -H "Content-Type: application/json" -X POST http://localhost:3012/login
+
+
+//Dodawnie
+curl -i -d '{
+    "author": "Test",
+    "country": "Poland",
+    "language": "Polish",
+    "pages": 921,
+    "title": "Test title",
+    "year": 2015
+}' -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzEwOTgxMDMsImV4cCI6MTY3MTA5OTMwM30.oLBdnEoYBS5d67wm_NuC7qJPpx5QIBFDrOi_fifUEs4" -X POST http: //localhost:2012/books
+
+//Czytanie
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzExMDczMTQsImV4cCI6MTY3MTEwODUxNH0.8-6hVm9-wAYCcVxbcXDIualiK2hFNcYW6cTf6-_CrCY" -X GET http: //localhost:2012/books
+
+//Usuwanie
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzExMDczMTQsImV4cCI6MTY3MTEwODUxNH0.8-6hVm9-wAYCcVxbcXDIualiK2hFNcYW6cTf6-_CrCY" -X DELETE http://localhost:2012/books/639aefc717dd59121a6ee34c
+
+//Edytowanie
+curl -i -d '{
+    "author": "Nowy autor",
+    "country": "Poland",
+    "language": "Polish",
+    "pages": 921,
+    "title": "Test title",
+    "year": 2115
+}' -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzExMDczMTQsImV4cCI6MTY3MTEwODUxNH0.8-6hVm9-wAYCcVxbcXDIualiK2hFNcYW6cTf6-_CrCY" -X PUT http://localhost:2012/books/639aefb4df7bbb6982405a5a

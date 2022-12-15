@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-
+const cors = require('cors');
 const app = express();
 
 const accessTokenSecret = 'somerandomaccesstoken';
@@ -20,12 +20,16 @@ const users = [
 
 const refreshTokens = [];
 
+
+app.use(cors({
+  origin: '*'
+}));
 app.use(bodyParser.json());
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   const user = users.find(u => { return u.username === username && u.password === password });
-  console.log(`${user.username} \n`);
+  console.log(`${user?.username} \n`);
   if (user) {
     const accessToken = jwt.sign({ username: user.username, role: user.role }, accessTokenSecret, { expiresIn: '20m' });
     const refreshToken = jwt.sign({ username: user.username, role: user.role }, refreshTokenSecret);
@@ -33,12 +37,14 @@ app.post('/login', (req, res) => {
     refreshTokens.push(refreshToken);
     console.log(accessToken);
 
+    res.status(200);
     res.json({
       accessToken,
       refreshToken
     });
   } else {
-    res.send('Username or password incorrect');
+    res.status(400);
+    res.json({ "message": 'Username or password incorrect' });
   }
 });
 

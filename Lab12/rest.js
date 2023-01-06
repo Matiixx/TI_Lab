@@ -48,6 +48,41 @@ function _ins_form() {
   document.getElementById('result').innerHTML = '';
 }
 
+function _search_form() {
+  var form1 = "<form name='search'><table>";
+  form1 += "<tr><td>lname</td><td><input type='text' name='lname' value='lname' ></input></td></tr>";
+  form1 += "<tr><td></td><td><input type='button' value='Szukaj' onclick='_search(this.form)' ></input></td></tr>";
+  form1 += "</table></form>";
+  document.getElementById('data').innerHTML = form1;
+  document.getElementById('result').innerHTML = '';
+}
+
+function _search(form) {
+  const lname = form.lname.value;
+  document.getElementById('result').innerHTML = '';
+  document.getElementById('data').innerHTML = '';
+  request = getRequestObject();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      if (request.readyState == 4) {
+        objJSON = JSON.parse(request.response);
+        var txt = "";
+        for (var id in objJSON) {
+          txt += id + ": {";
+          for (var prop in objJSON[id]) {
+            txt += prop + ":" + objJSON[id][prop] + ",";
+          }
+          txt += "}<br/>";
+        }
+        document.getElementById('result').innerHTML = txt;
+      }
+    }
+  }
+  request.open("GET", "http://pascal.fis.agh.edu.pl/~0cichostepski/Lab12/rest/searchByLname?lname=" + lname, true);
+  request.send(null);
+
+}
+
 function _insert(form) {
   var user = {};
   user.ident = form.ident.value;

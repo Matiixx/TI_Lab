@@ -26,8 +26,6 @@ class API extends REST
     }
   }
 
-
-
   private function _save()
   {
     if ($this->get_request_method() != "POST") {
@@ -83,14 +81,13 @@ class API extends REST
     $id = $this->_args[0];
     if (!empty($id)) {
       $res = $this->db->delete($id, $flag);
-      $this->response($res, 200);
-      // if ($res) {
-      //   $success = array('status' => "Success", "msg" => "Successfully one record deleted. Record - " . $id);
-      //   $this->response($this->json($success), 200);
-      // } else {
-      //   $failed = array('status' => "Failed", "msg" => "No records deleted");
-      //   $this->response($this->json($failed), 200);
-      // }
+      if ($res) {
+        $success = array('status' => "Success", "msg" => "Successfully one record deleted. Record - " . $id);
+        $this->response($this->json($success), 200);
+      } else {
+        $failed = array('status' => "Failed", "msg" => "No records deleted");
+        $this->response($this->json($failed), 200);
+      }
     } else {
       $failed = array('status' => "No content", "msg" => "No records deleted");
       $this->response($this->json($failed), 204);    // If no records "No Content" status
@@ -125,6 +122,16 @@ class API extends REST
       }
     } else
       $this->response('', 204); // If no records "No Content" status        
+  }
+
+  private function _searchByLname()
+  {
+    if ($this->get_request_method() != "GET") {
+      $this->response('', 406);
+    }
+    $array = $this->_request;
+    $result = $this->db->search($array['lname']);
+    $this->response($this->json($result), 200);
   }
 
   private function json($data)

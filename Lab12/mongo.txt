@@ -1,0 +1,6 @@
+function search($lname)
+{
+    $cursor = $this->collection->find(['lname' => $lname], []);
+    $table = iterator_to_array($cursor);
+    return $table;
+}

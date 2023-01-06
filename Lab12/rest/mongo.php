@@ -35,6 +35,13 @@ class db
     return $table;
   }
 
+  function search($lname)
+  {
+    $cursor = $this->collection->find(['lname' => $lname], []);
+    $table = iterator_to_array($cursor);
+    return $table;
+  }
+
   function insert($user)
   {
     $ret = $this->collection->insertOne($user);
@@ -43,26 +50,31 @@ class db
 
   function update($ident, $user, $flag)
   {
-    if ($flag) {
-      $rec = new MongoDB\BSON\ObjectId($ident);
-      $filter = array('_id' => $rec);
-    } else {
-      $filter = array('ident' => (int)$ident); //gdy przejmujemy $ident z query_string mamy tekst, a w bazie danych integery
+    try {
+      if ($flag) {
+        $rec = new MongoDB\BSON\ObjectId($ident);
+        $filter = array('_id' => $rec);
+      } else {
+        $filter = array('ident' => (int)$ident); //gdy przejmujemy $ident z query_string mamy tekst, a w bazie danych integery
+      }
+      $update = array('$set' => $user);
+      $updresult = $this->collection->updateOne($filter, $update);
+      $ret = $updresult->getModifiedCount();
+      return $ret;
+    } catch (\Throwable $th) {
+      return 0;
     }
-    $update = array('$set' => $user);
-    //$option = array ( 'w' => 1 );
-    //$ret = $this->collection->update($filter,$update,$option);
-    $updresult = $this->collection->updateOne($filter, $update);
-    //return $ret['nModified'];
-    $ret = $updresult->getModifiedCount();
-    return $ret;
   }
 
   function delete($ident, $flag)
   {
-    $filter = array('_id' => new MongoDB\BSON\ObjectId($ident));
-    $delresult = $this->collection->deleteOne($filter);
-    $ret = $delresult->getDeletedCount();
-    return $ret;
+    try {
+      $filter = array('_id' => new MongoDB\BSON\ObjectId($ident));
+      $delresult = $this->collection->deleteOne($filter);
+      $ret = $delresult->getDeletedCount();
+      return $ret;
+    } catch (\Throwable $th) {
+      return 0;
+    }
   }
 }

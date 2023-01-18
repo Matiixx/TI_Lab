@@ -1,0 +1,36 @@
+function _search_form() {
+    var form1 = "<form name='search'><table>";
+    form1 += "<tr><td>lname</td><td><input type='text' name='lname' value='lname' ></input></td></tr>";
+    form1 += "<tr><td></td><td><input type='button' value='Szukaj' onclick='_search(this.form)' ></input></td></tr>";
+    form1 += "</table></form>";
+    document.getElementById('data').innerHTML = form1;
+    document.getElementById('result').innerHTML = '';
+}
+
+function _search(form) {
+    const lname = form.lname.value;
+    console.log(lname);
+    document.getElementById('result').innerHTML = '';
+    document.getElementById('data').innerHTML = '';
+
+    xhr.open("GET", "http://pascal.fis.agh.edu.pl:11001/stud/nazwisko/" + lname, true);
+    xhr.responseType = 'json';
+    xhr.addEventListener("load", e => {
+        if (xhr.status == 200) {
+            //objJSON = JSON.parse(request.response);
+            objJSON = xhr.response;
+            var txt = "";
+            for (var id in objJSON) {
+                txt += id + ": {";
+                for (var prop in objJSON[id]) {
+                    if (prop !== '_id') { txt += prop + ":" + objJSON[id][prop] + ","; }
+                    else { txt += "id:" + objJSON[id][prop]['$oid'] + ","; }
+                }
+                txt += "}<br/>";
+            }
+            document.getElementById('data').innerHTML = '';
+            document.getElementById('result').innerHTML = txt;
+        }
+    })
+    xhr.send(null);
+}

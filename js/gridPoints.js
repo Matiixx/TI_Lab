@@ -8,7 +8,6 @@ function GridPoints() {
     p.setup = () => {
       const divWrapper = document.querySelector("#canvas-wrapper");
       canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-      console.log(p.windowWidth);
       canvas.position(0, 0);
       canvas.parent(divWrapper);
     };
